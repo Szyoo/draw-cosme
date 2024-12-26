@@ -1,0 +1,35 @@
+{
+  "name": "draw-cosme",
+  "version": "1.0.0",
+  "main": "dist/main/main.js",
+  "scripts": {
+    "dev:renderer": "vite",
+    "build:renderer": "vite build",
+    "start": "electron dist/main/main.js",
+    "build": "npm run build:renderer && npm run build:main && electron-builder",
+    "db:migrate": "db-migrate up --config src/main/db/database.json --migrations-dir src/main/db/migrations --env dev",
+    "db:rollback": "db-migrate down --config src/main/db/database.json --migrations-dir src/main/db/migrations --env dev"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "better-sqlite3": "^11.7.0",
+    "electron": "^33.2.1",
+    "playwright": "^1.49.1",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.2",
+    "@types/react": "^19.0.2",
+    "@types/react-dom": "^19.0.2",
+    "@vitejs/plugin-react": "^4.3.4",
+    "db-migrate": "^0.11.14",
+    "db-migrate-sqlite3": "^1.0.2",
+    "electron-builder": "^25.1.8",
+    "typescript": "^5.7.2",
+    "vite": "^6.0.6"
+  }
+}

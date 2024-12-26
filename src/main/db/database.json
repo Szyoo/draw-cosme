@@ -1,0 +1,7 @@
+{
+  "dev": {
+    "driver": "sqlite3",
+    "filename": "draw-cosme.db",
+    "migrations-dir": "src/main/db/migrations"
+  }
+}

@@ -1,0 +1,46 @@
+{
+    "compilerOptions": {
+      // 选择 ECMAScript 目标版本
+      "target": "ES2020",
+  
+      // Electron 主进程通常使用 commonjs 或 NodeNext，视你打包策略而定。
+      // 渲染进程(React)在Vite里一般会用ESNext或commonjs都行。这里用ESNext比较通用。
+      "module": "ESNext",
+  
+      // moduleResolution 用 "Node" 或 "NodeNext"，都可以
+      "moduleResolution": "Node",
+  
+      // 输出目录（注意你需要在 scripts 中指定 outDir，如 dist/main 或 dist/renderer）
+      // 如果你只想让这份 tsconfig 做类型检查，而真正的构建由 Vite 来处理渲染进程，再由tsc处理主进程，
+      // 可以把 "outDir" 写成某个你用来放编译后主进程代码的地方，比如 dist/main。
+      "outDir": "dist",
+  
+      // 允许在 Node 环境下使用 import 语句
+      "esModuleInterop": true,
+      "allowSyntheticDefaultImports": true,
+  
+      // 开启严格模式
+      "strict": true,
+  
+      // 如果使用 React，需要把 "jsx" 设置为 "react" 或 "react-jsx"（React17+）
+      "jsx": "react",
+  
+      // 是否检查 .d.ts 文件或者第三方库
+      "skipLibCheck": true,
+  
+      // 对于 Electron + Node 开发，经常需要 "resolveJsonModule": true 来支持导入 JSON
+      "resolveJsonModule": true,
+  
+      // 是否生成 sourceMap 文件方便调试
+      "sourceMap": true
+    },
+    "include": [
+      "src/**/*"
+    ],
+    "exclude": [
+      "node_modules",
+      // 如果你有单独的构建目录，如 dist，排除之
+      "dist"
+    ]
+  }
+  
